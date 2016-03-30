@@ -1,0 +1,96 @@
+<div id="mobileApp" class="tab-pane fade in ">
+                                    <br><br>
+                                    <label>Tarrget Operating System</label>
+                                    <div class="well well-lg">
+                                        <div class="col-sm-3">
+                                        <label class="checkbox-inline"><input type="checkbox" value="targetAndroid">Android</label>
+                                        </div>
+
+                                        <label class="checkbox-inline"><input type="checkbox" value="targetIos">IOS</label>
+
+                                        <br><br>&nbsp;&nbsp;
+                                            <div class="col-md-3">
+                                            <label class="checkbox-inline"><input type="checkbox" value="targetOtherOs">Other</label>
+                                            </div>
+
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                   Client Name:
+                                                    </div>
+                                                </div>
+                                                    <div class="col-md-6">
+                                                    <input type="text" class="form-control" id="usr" ng-model="clientName" required="usr"/>
+                                                  </div>
+
+                                    </div><!--end of the  target well-->
+
+
+
+
+                                        <label>Devices</label>
+                                        <div class="well well-lg">
+                                            <div class="col-sm-3">
+                                                <label class="checkbox-inline"><input type="checkbox" value="deviceMobile">Mobile</label>
+                                            </div>
+
+                                            <label class="checkbox-inline"><input type="checkbox" value="deviceTablets">Tablets</label>
+
+                                            <br><br>&nbsp;&nbsp;
+                                            <div class="col-md-3">
+                                                <label class="checkbox-inline"><input type="checkbox" value="deviceSpecific">Specific</label>
+                                            </div>
+
+                                            <div class="col-md-2">
+                                                <div class="form-group">
+                                                    Details:
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" id="usr" ng-model="deviceDetails" req   uired="usr"/>
+                                            </div>
+
+                                        </div><!--ent of the  device  well-->
+
+
+
+                                    <label>Gender</label>
+
+
+                                    <div class="well well-lg">
+                                        <div class="col-md-8">
+                                            <select id="dataCombo" class="selectpicker" style="width: 600px;padding: 0px;margin: 0px;   ">
+                                                <option value="one">Male</option>
+                                                <option value="two">Female</option>
+                                                <option value="two">Other</option>
+                                            </select>
+                                        </div>
+                                        <br><br>
+                                    </div><!--ent of the  gender well-->
+
+                                    <div>
+                                        <!--Age Silder code here--->
+
+                                        <label for="amount">Age range:</label>
+                                      <p>  <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;">
+                                        </p>
+                                        <div>
+                                            <div id="slider-range"></div>
+                                        </div>
+
+                                    </div><!--slider div end here-->
+    <!--this is working fine  extbernal js not working -->
+    <script>
+    $(function() {
+    $( "#slider-range" ).slider({
+        range: true,
+        min: 0,
+        max: 80,
+        values: [ 16,40 ],
+        slide: function( event, ui ) {
+            $( "#amount" ).val( "" + ui.values[ 0 ] + "-" + ui.values[ 1 ] );
+        }
+    });
+    $( "#amount" ).val( "" + $( "#slider-range" ).slider( "values", 0 ) +
+        " - " + $( "#slider-range" ).slider( "values", 1 ) );
+});
+    </script>

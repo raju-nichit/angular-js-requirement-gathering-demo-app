@@ -1,0 +1,45 @@
+<div  ng-controller="targetAudience">
+<div ng-include="'template/blocks/header.html'"></div>
+<div id="container">
+   <div ng-include="'template/blocks/aside.html'"></div>
+    <div class="content">          
+        
+    <form role="form" style="-top=20px;">
+    <div class="form-group">
+        <div class="col-md-10">
+    
+                
+            
+
+     <ul class="nav nav-tabs">
+		<li ><a href="" ng-class="{'active' : activeTab == 1}" ng-click="setActiveTab(1)">Mobile App</a></li>
+		<li ><a href="" ng-class="{'active' : activeTab == 2}" ng-click="setActiveTab(2)">Website</a></li>
+	  </ul>
+    
+            
+     <div class="tab-content">
+		<div ng-class="{'tab-pane' : activeTab !== 1}">
+            Mobile App Content here 
+         
+                <div ng-include="'template/mobileApp.html'"></div>
+         </div>
+		<div ng-class="{'tab-pane' : activeTab !== 2}">Website cotent here</div>
+	  </div>
+            
+                <ul class="pager">
+
+                                <li class="previous"><a  href="#clientInfo">Previous</a></li>
+                                <li class="next"><a  href="#targetAudience">Next</a></li>
+                </ul><!--pager end here---------->
+            
+          
+        </div><!--end of the col-md-10-->
+        </div><!--end of the from group-->
+        </form>
+        
+    
+        
+        </div>
+        
+    </div>
+    </div>

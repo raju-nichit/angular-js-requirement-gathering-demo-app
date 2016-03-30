@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+</head>
+<body>
+<div ng-app = "mainApp" ng-controller = "studentController">
+    <form name = "studentForm" novalidate>
+        
+            
+         Enter first name:
+                  <input name = "firstname" type = "text" ng-model = "firstName" required>
+                     <span style = "color:red" ng-show = "studentForm.firstname.$dirty && studentForm.firstname.$invalid">
+                        <span ng-show = "studentForm.firstname.$error.required">First Name is required.</span>
+                     </span>
+    </form>
+    </div>
+</body>
+<script>
+       var app=angular.module("mainApp",[]);
+    app.controller("studentController",function($scope){
+       $scope.firstName="arys";
+        console.log("Arya");
+        
+    });
+    
+</script>
+</html>
